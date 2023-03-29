@@ -1,0 +1,78 @@
+diff --git a/ports/rp2/boards/PICCOLO/board.json b/ports/rp2/boards/PICCOLO/board.json
+new file mode 100644
+index 000000000..e806de1b4
+--- /dev/null
++++ b/ports/rp2/boards/PICCOLO/board.json
+@@ -0,0 +1,20 @@
++{
++    "deploy": [
++        "../deploy.md"
++    ],
++    "docs": "",
++    "features": [
++        "Breadboard friendly",
++        "Castellated Pads",
++        "Micro USB"
++    ],
++    "id": "rp2-pico",
++    "images": [
++        "rp2-pico.jpg"
++    ],
++    "mcu": "rp2040",
++    "product": "Piccolo",
++    "thumbnail": "",
++    "url": "https://www.raspberrypi.com/products/raspberry-pi-pico/",
++    "vendor": "Raspberry Pi"
++}
+diff --git a/ports/rp2/boards/PICCOLO/mpconfigboard.cmake b/ports/rp2/boards/PICCOLO/mpconfigboard.cmake
+new file mode 100644
+index 000000000..3a40ca287
+--- /dev/null
++++ b/ports/rp2/boards/PICCOLO/mpconfigboard.cmake
+@@ -0,0 +1 @@
++# cmake file for Raspberry Pi Pico
+diff --git a/ports/rp2/boards/PICCOLO/mpconfigboard.h b/ports/rp2/boards/PICCOLO/mpconfigboard.h
+new file mode 100644
+index 000000000..454634701
+--- /dev/null
++++ b/ports/rp2/boards/PICCOLO/mpconfigboard.h
+@@ -0,0 +1,5 @@
++// Board and hardware specific configuration
++#define MICROPY_HW_BOARD_NAME                   "Raspberry Pi Pico"
++#define MICROPY_HW_FLASH_STORAGE_BYTES          (1408 * 1024)
++
++#define PICO_BOOT_STAGE2_CHOOSE_GENERIC_03H 1
+diff --git a/ports/rp2/boards/PICCOLO/pins.csv b/ports/rp2/boards/PICCOLO/pins.csv
+new file mode 100644
+index 000000000..16e334026
+--- /dev/null
++++ b/ports/rp2/boards/PICCOLO/pins.csv
+@@ -0,0 +1,28 @@
++GP0,GPIO0
++GP1,GPIO1
++GP2,GPIO2
++GP3,GPIO3
++GP4,GPIO4
++GP5,GPIO5
++GP6,GPIO6
++GP7,GPIO7
++GP8,GPIO8
++GP9,GPIO9
++GP10,GPIO10
++GP11,GPIO11
++GP12,GPIO12
++GP13,GPIO13
++GP14,GPIO14
++GP15,GPIO15
++GP16,GPIO16
++GP17,GPIO17
++GP18,GPIO18
++GP19,GPIO19
++GP20,GPIO20
++GP21,GPIO21
++GP22,GPIO22
++GP25,GPIO25
++GP26,GPIO26
++GP27,GPIO27
++GP28,GPIO28
++LED,GPIO25
